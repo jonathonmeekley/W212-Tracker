@@ -46,7 +46,7 @@ const DATA_VERSION=1;
 const defaultData={version:DATA_VERSION,jobs:[
 {id:'front-struts',title:'Front strut rebuild',category:'Front suspension',status:'ongoing',priority:'High',note:'Operation B4 Dalmatia: build complete front struts with Bilstein B4 DampMatic dampers, genuine Mercedes springs, new mounts/bearings, seats, boots/stops and hardware.'},
 {id:'rear-dampers',title:'Rear dampers & drop links',category:'Rear suspension',status:'ongoing',priority:'High',note:'Fit Bilstein B4 DampMatic rear dampers, new top mounts/protection kit and Lemförder rear ARB drop links.'},
-{id:'camera-finish',title:'Finalise reverse camera installation',category:'Infotainment',status:'ongoing',priority:'Medium',note:'Camera works. Finish cable routing and final boot-handle fit/sealing.'},
+{id:'camera-finish',title:'Improve reverse-camera guidelines',category:'Infotainment',status:'planned',priority:'Low',note:'Camera installation is complete and wiring is routed safely/discreetly. Only the appearance/settings remain unresolved: the module currently shows oversized orange dynamic guidelines rather than factory-style graphics.'},
 {id:'gearbox-mount',title:'Fit rear gearbox mount',category:'Transmission',status:'planned',priority:'Medium',note:'Lemförder 33875 01 is received and waiting to be fitted.'},
 {id:'alignment',title:'Four-wheel alignment',category:'Steering',status:'planned',priority:'High',note:'Book after the suspension rebuild is complete.'},
 {id:'undertray',title:'Undertray refurbishment',category:'Underbody',status:'planned',priority:'High',note:'Replace damaged large/rear undertray if a good genuine used panel is sourced; renew corroded/missing fixings.'},
@@ -59,7 +59,7 @@ const defaultData={version:DATA_VERSION,jobs:[
 {id:'bumper',title:'Repair rear bumper scuff',category:'Exterior',status:'planned',priority:'Low',note:'Cosmetic repair.'},
 {id:'wheels',title:'Refurbish alloy wheels',category:'Exterior',status:'planned',priority:'Low',note:'Keep factory-style silver finish.'},
 {id:'tyres',title:'Replace tyres for motorway comfort',category:'Wheels & tyres',status:'planned',priority:'Medium',note:'Priority is quiet ride, comfort, wet safety and stability.'},
-{id:'audio-midwoofers',title:'Upgrade front mid-woofers',category:'Audio',status:'planned',priority:'Low',note:'Alpine mid-woofers still pending.'},
+{id:'audio-midwoofers',title:'Alpine front mid-woofer upgrade',category:'Audio',status:'completed',priority:'',note:'Completed 3 Nov 2026. Both front door mid-woofers fitted using the original Mercedes housings/connectors; both doors sound-deadened. Driver-side test was very good; full stereo test still pending.'},
 {id:'hu-screw',title:'Retrieve lost head-unit screw if practical',category:'Infotainment',status:'planned',priority:'Low',note:'Only if convenient during future dash work.'},
 
 {id:'baseline-service',title:'Baseline engine service',category:'Maintenance',status:'completed',priority:'',note:'Oil/filter, air filter, fuel filter and cabin filter completed; service reset done.'},
@@ -71,7 +71,7 @@ const defaultData={version:DATA_VERSION,jobs:[
 {id:'cupholder',title:'Repair cupholder / ashtray lid',category:'Interior',status:'completed',priority:'',note:'Lid repaired and working.'},
 {id:'carplay-install',title:'Install wireless CarPlay interface',category:'Infotainment',status:'completed',priority:'',note:'Correct NTG 4.0 interface fitted; wireless CarPlay and steering-wheel control working.'},
 {id:'screen7',title:'Genuine 7-inch display retrofit',category:'Infotainment',status:'completed',priority:'',note:'Genuine 7-inch COMAND display and matching RHD frame fitted.'},
-{id:'reverse-camera-working',title:'Reverse camera electrical installation',category:'Infotainment',status:'completed',priority:'',note:'Aftermarket camera wired and working through CarPlay interface.'},
+{id:'reverse-camera-working',title:'Reverse camera installation',category:'Infotainment',status:'completed',priority:'',note:'Fully installed and working through the CarPlay interface; wiring routed safely/discreetly. Only the separate guideline appearance/settings issue remains.'},
 {id:'glovebox-light',title:'Repair glovebox light',category:'Interior',status:'completed',priority:'',note:'Connector repaired and bulb orientation corrected.'},
 {id:'tweeters',title:'Alpine tweeter upgrade',category:'Audio',status:'completed',priority:'',note:'Silk-dome tweeters fitted with correct crossover-cap arrangement.'},
 {id:'centre-caps',title:'Fit blue Mercedes centre caps',category:'Exterior',status:'completed',priority:'',note:'Blue laurel centre caps fitted.'}
@@ -112,7 +112,8 @@ const defaultData={version:DATA_VERSION,jobs:[
 {id:'carplay',name:'Wireless CarPlay interface – NTG 4.0',brand:'Aftermarket',part:'',qty:1,category:'Infotainment',status:'fitted',jobIds:['carplay-install'],note:'Wireless CarPlay, steering controls and reverse-camera switching working.'},
 {id:'display7',name:'Genuine 7-inch COMAND display',brand:'Mercedes-Benz',part:'A2129005000',qty:1,category:'Infotainment',status:'fitted',jobIds:['screen7'],note:''},
 {id:'frame7',name:'7-inch RHD display frame / surround',brand:'Mercedes-Benz',part:'A2126801536',qty:1,category:'Infotainment',status:'fitted',jobIds:['screen7'],note:''},
-{id:'reverse-camera',name:'Boot-handle reverse camera kit',brand:'Aftermarket',part:'',qty:1,category:'Infotainment',status:'fitted',jobIds:['reverse-camera-working','camera-finish'],note:'Camera image working; final cable/handle tidy-up remains.'}
+{id:'reverse-camera',name:'Boot-handle reverse camera kit',brand:'Aftermarket',part:'',qty:1,category:'Infotainment',status:'fitted',jobIds:['reverse-camera-working','camera-finish'],note:'Fully installed and working; only guideline appearance/settings remain.'},
+{id:'midwoofers-part',name:'Front door mid-woofers',brand:'Alpine',part:'',qty:2,category:'Audio',status:'fitted',jobIds:['audio-midwoofers'],note:'Fitted 3 Nov 2026 using original Mercedes housings/connectors; both doors sound-deadened.'}
 ]};
 function clone(o){return JSON.parse(JSON.stringify(o))}
 function load(){try{const d=JSON.parse(localStorage.getItem(STORAGE));if(d&&Array.isArray(d.jobs)&&Array.isArray(d.inventory))return upgrade(d)}catch(e){}return clone(defaultData)}
